@@ -66,14 +66,14 @@ class Oradb(object):
                     for row in self.db_cur.fetchall()]
             return data
 
-    def build_list(sql_results):
+    def build_list(self, sql_results):
         """Build a standard list from sql results"""
         li = []
         for r in sql_results:
             li.append(r[0])
         return li
 
-    def list_to_in(li):
+    def list_to_in(self, li):
         """format standard list for use with sql IN statements"""
         return ','.join(map("'{0}'".format, li))
 
